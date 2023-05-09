@@ -1,0 +1,86 @@
+<h4>TRABAJO EN CLASE</h4>
+<div class="formgrid grid">
+    <div class="col-6">
+        <p-panel header="Reactive Forms">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fuild">
+                <div class="field">
+                    <label> Nombre:</label>
+                    <input type="text" pInputText formControlName="name">
+                    <small *ngIf="form.controls['name'].errors && form.controls['name'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label> Apellido</label>
+                    <input type="text" pInputText formControlName="apellido">
+                    <small *ngIf="form.controls['apellido'].errors && form.controls['apellido'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label>Direccion:</label>
+                    <input type="text" pInputText formControlName="direccion">
+                    <small *ngIf="form.controls['direccion'].errors && form.controls['direccion'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label>Edad:</label>
+                    <p-inputNumber formControlName="age"
+                                    [showButtons]="true"
+                                    [min]="0"
+                                    [step]="5"
+                    ></p-inputNumber>
+                    <small *ngIf="form.controls['age'].errors && form.controls['age'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label>Fecha de Cumpleaños:</label>
+                    <p-calendar formControlName="birthdate"
+                                [showIcon]="true">
+                    </p-calendar>
+                    <small *ngIf="form.controls['birthdate'].errors && form.controls['birthdate'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label>Numero de Cedula</label>
+                    <p-inputNumber formControlName="numCedula"></p-inputNumber>
+                    <small *ngIf="form.controls['numCedula'].errors && form.controls['numCedula'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label>Numero de Telefono</label>
+                    <p-inputNumber formControlName="numTelefono"></p-inputNumber>
+                    <small *ngIf="form.controls['numTelefono'].errors && form.controls['numTelefono'].touched">
+                        A ocurrido un error
+                    </small>
+                </div>
+
+                <div class="fiel">
+                    <label>Estado Civil:</label>
+                    <input type="text" pInputText formControlName="estadoCivil">
+                    <small *ngIf="form.controls['estadoCivil'].errors && form.controls['estadoCivil'].touched">
+                        A ocurrido un error
+                    </small>
+                </div> <br>
+
+                <div class="field">
+                    <button pButton type="submit" label="Guardar"></button>
+                </div>
+            </form>
+        </p-panel>
+    </div>
+</div>
+
+<div class="field">
+    {{form.value|json}}
+</div>
