@@ -13,11 +13,14 @@ import {InputSwitchModule} from "primeng/inputswitch";
 import {CalendarModule} from "primeng/calendar";
 import {PanelModule} from "primeng/panel";
 import { ButtonModule } from 'primeng/button';
+import { PlayListComponent } from './play-list/play-list.component';
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayComponent
+    PlayComponent,
+    PlayListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { ButtonModule } from 'primeng/button';
     InputTextModule,
     InputSwitchModule,
     CalendarModule,
-    PanelModule
+    PanelModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
