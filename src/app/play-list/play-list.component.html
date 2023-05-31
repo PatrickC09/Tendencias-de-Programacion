@@ -1,12 +1,14 @@
-<p-table [value]="plays" [tableStyle]="{'min-width': '50rem'}"
-         selectionMode="single" [(selection)]="selectedPlay" dataKey="id">
+<p-table [value]="plays" [tableStyle]="{'min-width': '50rem'}" selectionMode="single" [(selection)]="selectedPlay"
+  dataKey="id">
   <ng-template pTemplate="header">
     <tr>
       <th>Id</th>
-      <th>Name</th>
-      <th>Age</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
       <th>Birthdate</th>
-      <th>State</th>
+      <th>Numero de Cedula</th>
+      <th>Numero de Telefono</th>
+      <th>Estado Civil</th>
       <th>Opciones</th>
     </tr>
   </ng-template>
@@ -14,14 +16,14 @@
     <tr [pSelectableRow]="item">
       <td>{{item.id}}</td>
       <td>{{item.name}}</td>
-      <td>{{item.age}}</td>
+      <td>{{item.apellido}}</td>
       <td>{{item.birthdate}}</td>
-      <td>{{item.state}}</td>
+      <td>{{item.numCedula}}</td>
+      <td>{{item.numTelefono}}</td>
+      <td>{{item.estadoCivil}}</td>
       <td>
-        <button pButton type="button" class="p-button-warning" icon="pi pi-pencil"
-                (click)="editPlay(item)"></button>
-        <button pButton type="button" class="p-button-danger" icon="pi pi-trash"
-                (click)="deletePlay(item.id)"></button>
+        <button pButton type="button" class="p-button-warning" icon="pi pi-pencil" (click)="editPlay(item)"></button> ㅤ
+        <button pButton type="button" class="p-button-danger" icon="pi pi-trash" (click)="deletePlay(item.id)"></button>
       </td>
     </tr>
   </ng-template>

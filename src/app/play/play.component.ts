@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PlaysService } from '../plays.service';
+import { PlaysService } from '../services/plays.service';
 
 @Component({
   selector: 'app-play',
@@ -59,12 +59,13 @@ export class PlayComponent {
     console.log(this.playService.plays)
   }
 
-  validateGame(){
-
-  }
-
+// get and set
 
   get idField(){
     return this.form.controls['id'];
+  }
+
+  get nameField(){
+    return this.form.controls['nameField'];
   }
 }

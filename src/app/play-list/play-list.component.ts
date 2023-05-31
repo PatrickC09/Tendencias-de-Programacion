@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlaysService } from '../plays.service';
+import { PlaysService } from '../services/plays.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,5 +28,17 @@ export class PlayListComponent {
   deletePlay(id:number){
     this.playSevice.deleteGame(id);
     console.log(this.playSevice.plays);
+  }
+
+  getAllCountries(){
+    console.log('1');
+    this.playSevice.getAllCountries().subscribe(
+      response=> {
+        console.log(response)
+      }, error => {
+        console.log(error);
+      }
+    );
+    console.log('3')
   }
 }

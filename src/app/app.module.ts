@@ -15,6 +15,7 @@ import {PanelModule} from "primeng/panel";
 import { ButtonModule } from 'primeng/button';
 import { PlayListComponent } from './play-list/play-list.component';
 import {TableModule} from "primeng/table";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {TableModule} from "primeng/table";
     InputSwitchModule,
     CalendarModule,
     PanelModule,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

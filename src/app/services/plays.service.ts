@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class PlaysService {
   plays: any[] = [];
   selectedPlay: any = null
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.loadPlays();
   }
 
@@ -39,4 +40,17 @@ export class PlaysService {
     }
   }
 
+  // traer la data del back
+  getAllCountries() {
+    return this.httpClient.get('http://localhost:3000/api/v1/students/catalogue')
+  }
+
 }
+
+/*
+GET: Traer Informacion 
+POST: Crear
+PUT: Actualizar 
+PATCH Actualizar
+DELETE: Eliminar
+*/
